@@ -1,2 +1,2 @@
 # simpleEEServer
-Simple EE servlet with Spring Boot tests
+EE servlet with Spring Boot Tests
