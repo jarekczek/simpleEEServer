@@ -13,6 +13,11 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(urlPatterns = "/*")
 public class Controller extends HttpServlet {
 
+  private String hello()
+  {
+    return "hello3";
+  }
+
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp)
   throws ServletException, IOException
@@ -26,13 +31,13 @@ public class Controller extends HttpServlet {
       return;
     }
     log.info("alive");
-    resp.getWriter().println("hello");
+    resp.getWriter().println(hello());
   }
 
   private void html(HttpServletRequest req, HttpServletResponse resp)
   throws IOException {
     resp.setContentType("text/html");
-    resp.getWriter().println("<html><title>tttt</title>hello</html>");
+    resp.getWriter().println("<html><title>tttt</title>" + hello() + "</html>");
   }
 
 }
