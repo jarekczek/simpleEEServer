@@ -18,8 +18,9 @@ public class Controller extends HttpServlet {
   throws ServletException, IOException
   {
     Logger log = Logger.getLogger("bs");
-    String path = Optional.ofNullable(req.getPathInfo())
-      .orElse("/");
+    String path = req.getPathInfo();
+    if (path == null)
+      path = "/";
     if (path.startsWith("/h")) {
       html(req, resp);
       return;
