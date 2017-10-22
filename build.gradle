@@ -66,3 +66,9 @@ gradle.afterProject {project, projectState ->
     'D:\\Program_Files\\eSpeak\\command_line\\espeak.exe fadle'.execute()
   }
 }
+
+task warAuto (type: Copy, dependsOn: 'war') {
+  from libsDir
+  include '*.war'
+  into 'c:\\IBM\\WebSphere\\AppServer85\\profiles\\jarek\\monitoredDeployableApps\\servers\\server1\\'
+}
